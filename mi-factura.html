@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Factura - EPM</title>
+    <!-- CDN de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+
+    <!-- Encabezado y menú de navegación de la plantilla -->
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Mi Factura de Energía</h1>
+        <p>Análisis de la factura de EPM, historial de consumo y proyecciones del hogar.</p>
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi Factura</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: Foto e Historial de consumo real de la factura -->
+        <section class="mb-5">
+            <h2>Factura e Historial de Consumo</h2>
+            
+            <figure class="mb-4">
+                <img class="img-fluid border rounded" src="img/factura.png" alt="Foto de la factura de servicios públicos de EPM correspondiente al mes de septiembre de 2026" width="450">
+                <figcaption>Foto del recibo de servicios públicos de EPM (septiembre 2026).</figcaption>
+            </figure>
+
+            <table class="table table-striped table-bordered align-middle">
+                <caption>Histórico de consumos en kWh registrado en la factura (Tarifa actual: $531,44 COP/kWh)</caption>
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Mes</th>
+                        <th>Consumo (kWh)</th>
+                        <th>Valor Pagado (COP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Septiembre 2025</td>
+                        <td class="text-center">79</td>
+                        <td class="text-end">$41.984</td>
+                    </tr>
+                    <tr>
+                        <td>Marzo 2026</td>
+                        <td class="text-center">83</td>
+                        <td class="text-end">$44.110</td>
+                    </tr>
+                    <tr>
+                        <td>Mayo 2026</td>
+                        <td class="text-center">87</td>
+                        <td class="text-end">$46.235</td>
+                    </tr>
+                    <tr>
+                        <td>Julio 2026</td>
+                        <td class="text-center">81</td>
+                        <td class="text-end">$43.047</td>
+                    </tr>
+                    <tr>
+                        <td>Agosto 2026</td>
+                        <td class="text-center">124</td>
+                        <td class="text-end">$65.899</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Septiembre 2026 (Actual)</td>
+                        <td class="text-center fw-bold">130</td>
+                        <td class="text-end fw-bold">$69.087</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN 2: Análisis comparativo proyección vs factura real -->
+        <section class="mb-5">
+            <h2>Comparación: Proyección vs Factura Real</h2>
+            <p>
+                Al calcular el consumo semanal en <strong>equipos.html</strong> para los 4 aparatos principales (congelador, dos televisores y proyector), obtuvimos <strong>21,02 kWh a la semana</strong>, lo cual proyecta un consumo mensual aproximado de <strong>90 kWh</strong> ($47.830 COP).
+            </p>
+            <p>
+                Sin embargo, en la factura real de septiembre de EPM se registró un consumo total de <strong>130 kWh</strong> ($69.087 COP)[cite: 2].
+            </p>
+            <p>
+                <strong>Explicación de la diferencia (40 kWh de diferencia):</strong> Esta variación se debe a consumos secundarios del hogar que no formaron parte del inventario inicial, como el sistema de iluminación (bombillos), la lavadora, pequeños electrodomésticos de cocina, cargadores de celular y el consumo en modo de espera (vampiro) de los equipos cuando permanecen enchufados.
+            </p>
+
+            <!-- COMPONENTE EXTRA 1: ALERT -->
+            <div class="alert alert-warning mt-3" role="alert">
+            <strong>¡Atención al consumo!</strong> En la factura real de septiembre se registraron <strong>40 kWh adicionales</strong> en comparación con la proyección inicial de los equipos.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Recomendaciones de ahorro con el componente BADGE -->
+        <section class="mb-5">
+            <h2>Recomendaciones de Ahorro para la Familia <span class="badge bg-success">Plan 2026</span></h2>
+            <p>Con base en los datos analizados y la diferencia detectada en la factura de EPM, sugerimos las siguientes medidas:</p>
+    
+            <ul class="list-unstyled">
+                <li class="mb-3 p-2 border-bottom">
+                    <span class="badge bg-danger me-2">Prioridad Alta</span>
+                    <strong>Optimizar el uso del congelador Challenger:</strong> Verificar que los empaques de la puerta sellen herméticamente para evitar que el motor trabaje de más.
+                </li>
+                <li class="mb-3 p-2 border-bottom">
+                    <span class="badge bg-primary me-2">Consumo Fantasma</span>
+                    <strong>Desconectar equipos sin uso:</strong> Desenchufar televisores y el proyector mediante una multitoma con interruptor para eliminar el gasto de energía en modo de espera.
+                </li>
+                <li class="mb-3 p-2 border-bottom">
+                    <span class="badge bg-warning text-dark me-2">Hábitos</span>
+                    <strong>Control de iluminación:</strong> Aprovechar la luz natural durante el día y asegurarse de apagar los bombillos al salir de las habitaciones.
+                 </li>
+             </ul>
+         </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+
+</body>
+</html>

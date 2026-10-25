@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Hábitos - EPM</title>
+    <!-- CDN de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+
+    <!-- Encabezado y menú de navegación -->
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Encuesta de Hábitos de Consumo</h1>
+        <p>Formulario para evaluar el uso de la energía eléctrica en el hogar.</p>
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi Factura</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mb-4">
+            <h2>Formulario de Diagnóstico Familiar</h2>
+            <p>Complete la siguiente información para identificar oportunidades de ahorro de energía en su vivienda.</p>
+
+            <!-- Formulario con método GET -->
+            <form action="#" method="get" class="mt-4">
+
+                <!-- GRUPO 1: Datos Generales -->
+                <fieldset class="border p-3 mb-4 rounded">
+                    <legend class="float-none w-auto px-2 fw-bold fs-5 text-primary">1. Información del Encuestado</legend>
+                    
+                    <!-- Campo 1: TEXT (Obligatorio) -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <!-- Campo 2: EMAIL (Obligatorio) -->
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" class="form-control" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <!-- Campo 3: NUMBER con min y max (Obligatorio) -->
+                    <div class="mb-3">
+                        <label for="personas" class="form-label">Número de personas que habitan el hogar (1 a 15):</label>
+                        <input type="number" id="personas" name="personas" class="form-control" min="1" max="15" required>
+                    </div>
+
+                    <!-- Campo 4: SELECT (Obligatorio) -->
+                    <div class="mb-3">
+                        <label for="vivienda" class="form-label">Tipo de vivienda:</label>
+                        <select id="vivienda" name="vivienda" class="form-select" required>
+                            <option value="" selected disabled>-- Seleccione una opción --</option>
+                            <option value="Apartamento">Apartamento</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Finca">Finca / Casa campestre</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- GRUPO 2: Hábitos de Consumo -->
+                <fieldset class="border p-3 mb-4 rounded">
+                    <legend class="float-none w-auto px-2 fw-bold fs-5 text-primary">2. Hábitos y Uso de Energía</legend>
+
+                    <!-- Campo 5: RADIO (Obligatorio) -->
+                    <div class="mb-3">
+                        <label class="form-label d-block">¿Acostumbran apagar las luces al salir de una habitación?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="apaga_luces" id="luces_si" value="si" required>
+                            <label class="form-check-label" for="luces_si">Siempre</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="apaga_luces" id="luces_aveces" value="a_veces">
+                            <label class="form-check-label" for="luces_aveces">A veces</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="apaga_luces" id="luces_no" value="no">
+                            <label class="form-check-label" for="luces_no">Rara vez</label>
+                        </div>
+                    </div>
+
+                    <!-- Campo 6: CHECKBOX (Opcional) -->
+                    <div class="mb-3">
+                        <label class="form-label d-block">Marque los equipos que permanecen conectados todo el día en su casa:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="equipo_congelador" name="equipos_conectados" value="congelador">
+                            <label class="form-check-label" for="equipo_congelador">Congelador</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="equipo_tv" name="equipos_conectados" value="televisor">
+                            <label class="form-check-label" for="equipo_tv">Televisores</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="equipo_router" name="equipos_conectados" value="router">
+                            <label class="form-check-label" for="equipo_router">Módem / Router Wi-Fi</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="equipo_cargadores" name="equipos_conectados" value="cargadores">
+                            <label class="form-check-label" for="equipo_cargadores">Cargadores de celular</label>
+                        </div>
+                    </div>
+
+                    <!-- Campo 7: RANGE (Opcional) -->
+                    <div class="mb-3">
+                        <label for="conciencia" class="form-label">Nivel de compromiso de la familia con el ahorro energético (1 al 10):</label>
+                        <input type="range" class="form-range" id="conciencia" name="conciencia" min="1" max="10" step="1">
+                    </div>
+
+                    <!-- Campo 8: TEXTAREA (Obligatorio) -->
+                    <div class="mb-3">
+                        <label for="compromiso" class="form-label">Escriba una acción concreta que se compromete a realizar en familia para bajar el consumo:</label>
+                        <textarea class="form-control" id="compromiso" name="compromiso" rows="3" placeholder="Ej. Revisar empaques del congelador y desconectar televisores..." required></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Botones del formulario -->
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Enviar Encuesta</button>
+                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+
+</body>
+</html>
